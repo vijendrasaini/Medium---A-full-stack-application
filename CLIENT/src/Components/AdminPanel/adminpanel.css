@@ -1,0 +1,22 @@
+.admin-panel{
+    width: 100px;
+    height: 100vh;
+    border-right: 1px solid #BDBDBD;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.admin-panel__medium-logo > img{
+    margin-top: 30px;
+    width: 45px;
+    height: 45px;
+}
+.admin-panel__icon-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.admin-panel__user-profile-image{
+    margin-bottom: 25px;
+}
