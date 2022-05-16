@@ -2,9 +2,6 @@
     width: 400px;
     border: 1px solid red;
 }
-.popular-tags div{
-    border: 1px solid green;
-}
 .popular-tags span{
     background-color: #f2f2f2;
     border-radius: 99px;
