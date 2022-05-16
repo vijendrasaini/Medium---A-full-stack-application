@@ -1,0 +1,17 @@
+.popular-tags{
+    width: 400px;
+    border: 1px solid red;
+}
+.popular-tags > div{
+    display: flex;
+    width: 400px;
+    gap: 20px;
+}
+.popular-tags >div>div{
+    background-color: #f2f2f2;
+    border-radius: 99px;
+    padding: 2px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
