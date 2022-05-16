@@ -1,0 +1,42 @@
+.blog-overview{
+    width: 700px;
+    height: 258px;
+    border-bottom: 1px solid rgb(233, 224, 224);
+    padding-top: 50px;
+}
+.blog-overview__user-and-time{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.blog-overview__user-and-time > div > span:nth-child(2){
+    color: #757575;
+}
+.blog-overview__blog-tbi{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 13px;
+}
+.blog-overview__blog-tbi > div:first-child{
+    width: 532px;
+}
+.blog-overview__blog-tbi h2{
+    margin-top: 0px;
+}
+.blog-overview__blog-tbi img{
+    width: 140px;
+    height: 140px;
+}
+.blog-overview__blog-tbi p{
+    line-height: 25px;
+}
+.blog-overview__tags{
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+.blog-overview__tags > small{
+    padding: 2px 10px;
+    background-color: #f2f2f2;
+    border-radius: 99px;
+}
