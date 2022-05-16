@@ -6,12 +6,12 @@ export const TrendingTags = () => {
         <div className="popular-tags">
             <h3>Topics matching {"bussiness"}</h3>
             <div>
-                <div><span>Bussiness</span></div>
-                <div><span>Bussiness Website</span></div>
-                <div><span>Bussinessvalues</span></div>
-                <div><span>Bussinessman</span></div>
-                <div><span>Bussinesstips</span></div>
-                <div><span>Bussiness Model</span></div>
+                <span>Bussiness</span>
+                <span>Bussiness Website</span>
+                <span>Bussinessvalues</span>
+                <span>Bussinessman</span>
+                <span>Bussinesstips</span>
+                <span>Bussiness Model</span>
             </div>
         </div>
     )
