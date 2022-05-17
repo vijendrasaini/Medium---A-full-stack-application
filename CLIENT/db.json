@@ -2,9 +2,63 @@
     "users" : [
         {
             "id" : 1,
-            "username" : "",
-            "name" : "",
-            "avatar" : ""
+            "username" : "Elon Musk",
+            "name" : "Elon Musk",
+            "avatar" : "https://www.forbes.com/profile/elon-musk/?list=rtb/"
+        },
+        {
+            "id" : 2,
+            "username" : "Bernard Arnault & family",
+            "name" : "Bernard Arnault & family",
+            "avatar" : "https://www.forbes.com/profile/bernard-arnault/?list=rtb/"
+        },
+        {
+            "id" : 3,
+            "username" : "Jeff Bezos",
+            "name" : "Jeff Bezos",
+            "avatar" : "https://www.forbes.com/profile/jeff-bezos/?list=rtb/"
+        },
+        {
+            "id" : 4,
+            "username" : "Bill Gates",
+            "name" : "Bill Gates",
+            "avatar" : "https://www.forbes.com/profile/bill-gates/?list=rtb/"
+        },
+        {
+            "id" : 5,
+            "username" : "Warren Buffett",
+            "name" : "Warren Buffett",
+            "avatar" : "https://www.forbes.com/profile/warren-buffett/?list=rtb/"
+        },
+        {
+            "id" : 6,
+            "username" : "Gautam Adani & family",
+            "name" : "Gautam Adani & family",
+            "avatar" : "https://www.forbes.com/profile/gautam-adani-1/?list=rtb/"
+        },
+        {
+            "id" : 7,
+            "username" : "Larry Page",
+            "name" : "Larry Page",
+            "avatar" : "https://www.forbes.com/profile/larry-page/?list=rtb/"
+        },
+        {
+            "id" : 8,
+            "username" : "Larry Ellison",
+            "name" : "Larry Ellison",
+            "avatar" : "https://www.forbes.com/profile/larry-ellison/?list=rtb/"
+        },
+        {
+            "id" : 9,
+            "username" : "Sergey Brin",
+            "name" : "Sergey Brin",
+            "avatar" : "https://www.forbes.com/profile/sergey-brin/?list=rtb/"
+        },
+        {
+            "id" : 10,
+            "username" : "Mukesh Ambani",
+            "name" : "Mukesh Ambani",
+            "avatar" : "https://www.forbes.com/profile/mukesh-ambani/?list=rtb/"
         }
     ],
     "blogSummaries" : [
@@ -13,21 +67,127 @@
             
             "userId" : 1,
             "blog" : {
-                "title" : "",
-                "image" : "",
-                "body" : ""
+                "title" : "The 7 Mindset Shifts That Finally Brought Me Happiness In My 40s",
+                "image" : "https://miro.medium.com/max/875/0*7WpqEdMkUwrI1pb6",
+                "body" : "It’s not a prize at the end of a destination — For most of my 20s and 30s, I thought of happiness as the prize at the bottom of a Crackerjack box. You"
+            },
+            "createdAt" : ""
+        },
+        {
+            "id" : 2,
+            
+            "userId" : 2,
+            "blog" : {
+                "title" : "7 Conversational Habits That Reveal Someone’s True Character",
+                "image" : "https://miro.medium.com/max/875/1*Qzi_d5B9metdMVgY8nZp1w.jpeg",
+                "body" : "#3 — They‘re in it to win it — You can tell a lot about someone after a few conversations. Are they inconsiderate, insecure, obnoxiously competitive,"
+            },
+            "createdAt" : ""
+        },
+        {
+            "id" : 3,
+            
+            "userId" : 3,
+            "blog" : {
+                "title" : "Financial Lessons From A Frugal Billionaire",
+                "image" : "https://miro.medium.com/max/875/1*ogDsqKPGUuCRsy2B26pY8A.jpeg",
+                "body" : "The good, the unusual and the unexpected… — Warren Buffett, otherwise known as “the Oracle of Ohama”, is undoubtedly a force to reckon with and one of the best investors the world has ever known. His brilliant investme"
+            },
+            "createdAt" : ""
+        },
+        {
+            "id" : 4,
+            
+            "userId" : 4,
+            "blog" : {
+                "title" : "Cybermiles: Smart Bussiness Contract More Powerfull Than Ethereum Blockchain",
+                "image" : "https://miro.medium.com/max/875/1*vxeIbJl3arhGT18cpZNHnQ.jpeg",
+                "body" : "There are several problems that the existing e-commerce based platforms and the blockchain are still faced that reduces the capacity of the users to"
+            },
+            "createdAt" : ""
+        },
+        {
+            "id" : 5,
+            
+            "userId" : 5,
+            "blog" : {
+                "title" : "Self-Made Billionaire: There Are Three Levels Of Reality, And Most People Are Stuck In Level One, But They Have No Idea",
+                "image" : "https://miro.medium.com/max/875/1*3foBIrHmO2wmNPhdZr1ovw.jpeg",
+                "body" : "The brutal truth is that most people aren’t even aware of Level 2 or 3 One c"
             },
             "createdAt" : ""
         }
     ],
-    "blogs" : [
+    "blogs": [
         {
-            "id" : 1,
-            "blogId" : 1,
-            
-            "htmlContent" : "",
-            "tags" : [],
-            "createdAt" : ""
+            "id": 1,
+            "blogId": 1,
+            "htmlContent": "",
+            "tags": [
+                "Mindset",
+                "Mindset Shift",
+                "Mindset Coaching",
+                "Mindset Matters",
+                "Mindset Startup Academy",
+                "Mindset Agil"
+            ],
+            "createdAt": ""
+        },
+        {
+            "id": 2,
+            "blogId": 1,
+            "htmlContent": "",
+            "tags": [
+                "Character",
+                "Character Development",
+                "Character Design",
+                "Character Building",
+                "Characterization",
+                "Characteristics"
+            ],
+            "createdAt": ""
+        },
+        {
+            "id": 3,
+            "blogId": 1,
+            "htmlContent": "",
+            "tags": [
+                "Enterpreneur",
+                "Enterpreneurship",
+                "Enterpreneurr",
+                "Enterpreneurhotseat",
+                "Enterpreneur From Bihar",
+                "Social Enterpreneurship"
+            ],
+            "createdAt": ""
+        },
+        {
+            "id": 4,
+            "blogId": 1,
+            "htmlContent": "",
+            "tags": [
+                "Bussiness",
+                "Bussiness Website",
+                "Bussinessvalues",
+                "Bussinessman",
+                "Bussinesstips",
+                "Bussiness Model"
+            ],
+            "createdAt": ""
+        },
+        {
+            "id": 5,
+            "blogId": 1,
+            "htmlContent": "",
+            "tags": [
+                "Billionaires",
+                "Billionairelifesyle",
+                "Billionaire Insights",
+                "Billionairewisdom",
+                "Billionaire Lifestyle",
+                "Billionaire Romance"
+            ],
+            "createdAt": ""
         }
     ],
     "responses" : [
