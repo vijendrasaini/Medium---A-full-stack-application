@@ -1,5 +1,5 @@
 const { connect } = require('mongoose')
 
-const db = `mongo://localhost:27015/medium`
+const db = `mongodb://localhost:27017/medium`
 
 module.exports = () => connect(db)
