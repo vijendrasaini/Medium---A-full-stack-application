@@ -46,49 +46,28 @@
             "id": 4,
             "blogId": 1,
             "htmlContent": "",
-            "tags": [],
+            "tags": [
+                "Bussiness",
+                "Bussiness Website",
+                "Bussinessvalues",
+                "Bussinessman",
+                "Bussinesstips",
+                "Bussiness Model"
+            ],
             "createdAt": ""
         },
         {
             "id": 5,
             "blogId": 1,
             "htmlContent": "",
-            "tags": [],
-            "createdAt": ""
-        },
-        {
-            "id": 6,
-            "blogId": 1,
-            "htmlContent": "",
-            "tags": [],
-            "createdAt": ""
-        },
-        {
-            "id": 7,
-            "blogId": 1,
-            "htmlContent": "",
-            "tags": [],
-            "createdAt": ""
-        },
-        {
-            "id": 8,
-            "blogId": 1,
-            "htmlContent": "",
-            "tags": [],
-            "createdAt": ""
-        },
-        {
-            "id": 9,
-            "blogId": 1,
-            "htmlContent": "",
-            "tags": [],
-            "createdAt": ""
-        },
-        {
-            "id": 10,
-            "blogId": 1,
-            "htmlContent": "",
-            "tags": [],
+            "tags": [
+                "Billionaires",
+                "Billionairelifesyle",
+                "Billionaire Insights",
+                "Billionairewisdom",
+                "Billionaire Lifestyle",
+                "Billionaire Romance"
+            ],
             "createdAt": ""
         }
     ]
