@@ -1,10 +1,10 @@
-import { Blogs } from './Pages/Blogs/Blogs'
+import { AllRouters } from './Components/AllRouters/AllRouters'
 
 function App() {
 
   return (
     <div>
-      <Blogs/>
+      <AllRouters/>
     </div>
   )
 }
