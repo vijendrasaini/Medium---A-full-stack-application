@@ -1,0 +1,12 @@
+{
+    "blogs" : [
+        {
+            "id" : 1,
+            "blogId" : 1,
+            
+            "htmlContent" : "",
+            "tags" : [],
+            "createdAt" : ""
+        }
+    ]
+}
