@@ -1,4 +1,13 @@
 .blogs-page{
     display: flex;
-    /* justify-content: space-around; */
+    padding: 5px;
+}
+.blogs-page > div:nth-child(1){
+    margin-right: 100px;
+}
+.blogs-page > div:nth-child(3){
+    padding-left: 30px;
+    /* display: flex;
+    justify-content: center; */
+
 }
