@@ -1,8 +1,8 @@
-const { Schema, model, default: mongoose } = require('mongoose')
+const { Schema, model } = require('mongoose')
 
 const blogSummariesSchema = new Schema(
     {
-        userId : { type : mongoose.Schema.Types.ObjectId, required : true},
+        userId : { type : Schema.Types.ObjectId, required : true},
         blog : {
                 title: { type : String},
                 image: { type : String},
