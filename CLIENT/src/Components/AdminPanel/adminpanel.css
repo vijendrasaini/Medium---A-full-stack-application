@@ -1,3 +1,6 @@
+.admin-panel-container{
+    position: fixed;
+}
 .admin-panel{
     width: 100px;
     height: 100vh;
