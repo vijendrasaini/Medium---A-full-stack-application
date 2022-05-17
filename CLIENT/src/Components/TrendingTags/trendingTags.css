@@ -1,10 +1,15 @@
-.popular-tags{
-    width: 400px;
-    border: 1px solid red;
+.tags-container{
+    margin-top: 50px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-.popular-tags span{
+.tags-container div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #f2f2f2;
-    border-radius: 99px;
     padding: 8px 16px;
-    margin-right: 20px;
+    border-radius: 99px;
 }
