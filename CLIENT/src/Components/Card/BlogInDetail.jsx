@@ -5,43 +5,28 @@ import IosShareIcon from '@mui/icons-material/IosShare';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import './blogInDetail.css'
 import { useState } from "react";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { baseURL } from "../../Resources/universalData";
 
 export const BlogInDetail = () => {
 
-    
-    const [blog, setBlog] = useState({})
-
-    // const sendData = async ( )=>{
-    //     const url = 'http://localhost:7000/blogs/5'
-    //     try {
-    //         const secArg = {
-    //             method : "PATCH",
-    //             body : JSON.stringify({ 
-    //                 blogId: 1,
-    //                 htmlContent: data,
-    //                 tags: [
-    //                     "Billionaires",
-    //                     "Billionairelifesyle",
-    //                     "Billionaire Insights",
-    //                     "Billionairewisdom",
-    //                     "Billionaire Lifestyle",
-    //                     "Billionaire Romance"
-    //                   ],
-    //                 createdAt: ""
-    //              }),
-    //              headers : {
-    //                 "content-type" : "application/json"
-    //              }
-    //         }
-    //         const response = await fetch(url)
-    //         const b = await response.json()
-    //         console.log({ responseB : b})
-    //         setCode(b.htmlContent)
-
-    //     } catch (error) {
-    //         console.log({message : error.message})   
-    //     }
-    // }
+    const { blogId } = useParams()
+    const [ blog, setBlog] = useState({})
+    useEffect(()=>{
+        fetchBlogById()
+    },[])
+    async function fetchBlogById(){
+        const path = '/blogs'
+        try {
+            const response = await fetch(`${baseURL}${path}/${blogId}`)
+            const data = await response.json()
+            console.log(data)
+            setBlog(data)
+        } catch (error) {
+            console.log({ message : error.message})
+        }
+    }
     return (
         <div className="blogs-container">
             <div className="blog-content">
@@ -70,7 +55,7 @@ export const BlogInDetail = () => {
                         </IconButton>
                     </div>
                 </div>
-                <div className="blog-content__HTML-Content" dangerouslySetInnerHTML={{__html : data}}>
+                <div className="blog-content__HTML-Content" dangerouslySetInnerHTML={{__html : blog?.htmlContent}}>
                 </div>
                 <div className="blog-content__footer">
                     <div>
