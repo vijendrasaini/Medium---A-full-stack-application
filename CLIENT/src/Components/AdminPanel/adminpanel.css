@@ -1,10 +1,9 @@
-.admin-panel-container{
-    position: fixed;
-}
+/* .admin-panel-container{
+} */
 .admin-panel{
+    position: fixed;
     width: 100px;
     height: 100vh;
-    border-right: 1px solid rgb(233, 224, 224);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
