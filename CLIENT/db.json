@@ -1,0 +1,41 @@
+{
+    "users" : [
+        {
+            "id" : 1,
+            "username" : "",
+            "name" : "",
+            "avatar" : ""
+        }
+    ],
+    "blogSummaries" : [
+        {
+            "id" : 1,
+            
+            "userId" : 1,
+            "blog" : {
+                "title" : "",
+                "image" : "",
+                "body" : ""
+            },
+            "createdAt" : ""
+        }
+    ],
+    "blogs" : [
+        {
+            "id" : 1,
+            "blogId" : 1,
+            
+            "htmlContent" : "",
+            "tags" : [],
+            "createdAt" : ""
+        }
+    ],
+    "responses" : [
+        {
+            "blogId" : 1,
+            "userId" : 1,
+            "comment" : "Nice blogs",
+            "createdAt" : ""
+        }
+    ]
+}
