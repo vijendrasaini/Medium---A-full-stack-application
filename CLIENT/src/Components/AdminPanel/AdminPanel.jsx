@@ -13,7 +13,7 @@ export const AdminPanel = ()=>{
 
 
     return(
-        <div className='admin-panel-container'>
+        <div>
             <div className="admin-panel">
                 <div className='admin-panel__medium-logo'>
                     <img src={logo} alt="logo image" />
