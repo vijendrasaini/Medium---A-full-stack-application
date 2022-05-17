@@ -1,12 +1,95 @@
 {
-    "blogs" : [
+    "blogs": [
         {
-            "id" : 1,
-            "blogId" : 1,
-            
-            "htmlContent" : "",
-            "tags" : [],
-            "createdAt" : ""
+            "id": 1,
+            "blogId": 1,
+            "htmlContent": "",
+            "tags": [
+                "Mindset",
+                "Mindset Shift",
+                "Mindset Coaching",
+                "Mindset Matters",
+                "Mindset Startup Academy",
+                "Mindset Agil"
+            ],
+            "createdAt": ""
+        },
+        {
+            "id": 2,
+            "blogId": 1,
+            "htmlContent": "",
+            "tags": [
+                "Character",
+                "Character Development",
+                "Character Design",
+                "Character Building",
+                "Characterization",
+                "Characteristics"
+            ],
+            "createdAt": ""
+        },
+        {
+            "id": 3,
+            "blogId": 1,
+            "htmlContent": "",
+            "tags": [
+                "Enterpreneur",
+                "Enterpreneurship",
+                "Enterpreneurr",
+                "Enterpreneurhotseat",
+                "Enterpreneur From Bihar",
+                "Social Enterpreneurship"
+            ],
+            "createdAt": ""
+        },
+        {
+            "id": 4,
+            "blogId": 1,
+            "htmlContent": "",
+            "tags": [],
+            "createdAt": ""
+        },
+        {
+            "id": 5,
+            "blogId": 1,
+            "htmlContent": "",
+            "tags": [],
+            "createdAt": ""
+        },
+        {
+            "id": 6,
+            "blogId": 1,
+            "htmlContent": "",
+            "tags": [],
+            "createdAt": ""
+        },
+        {
+            "id": 7,
+            "blogId": 1,
+            "htmlContent": "",
+            "tags": [],
+            "createdAt": ""
+        },
+        {
+            "id": 8,
+            "blogId": 1,
+            "htmlContent": "",
+            "tags": [],
+            "createdAt": ""
+        },
+        {
+            "id": 9,
+            "blogId": 1,
+            "htmlContent": "",
+            "tags": [],
+            "createdAt": ""
+        },
+        {
+            "id": 10,
+            "blogId": 1,
+            "htmlContent": "",
+            "tags": [],
+            "createdAt": ""
         }
     ]
 }
