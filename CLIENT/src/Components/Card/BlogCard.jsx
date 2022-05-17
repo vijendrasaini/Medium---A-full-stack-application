@@ -2,8 +2,7 @@ import { Avatar } from '@mui/material'
 import { Link } from 'react-router-dom'
 import './blogcard.css'
 
-export const BlogCard = () => {
-
+export const BlogCard = ({ blog, id }) => {
 
     return (
         <div className="blog-overview">
@@ -14,14 +13,14 @@ export const BlogCard = () => {
                     <span> . {"5 days ago"}</span>
                 </div>
             </div>
-            <Link to={"/username/9485749"}
+            <Link to={`${"username"}/${id}`}
             style={{ textDecoration : "none", color : 'black'}}
             >
                 <div className="blog-overview__blog-tbi">
                     <div>
                         <div>
-                            <h2>7 daily habits to increase your self-confidence</h2>
-                            <p>1. The Mayo Clinic Guide to Stress-Free Living. by Amit Sood. This book is based on the stress management program that Dr. Sood, a physician specialized in integrative medicine, has offered at Mayo Clinic and is a ...</p>
+                            <h2>{ blog?.title || "7 daily habits to increase your self-confidence"}</h2>
+                            <p>{(blog?.body || "1. The Mayo Clinic Guide to Stress-Free Living. by Amit Sood. This book is based on the stress management program that Dr. Sood, a physician specialized in integrative medicine, has offered at Mayo Clinic and is a")  + " ..."}</p>
                         </div>
                         <div>
                             <div className='blog-overview__tags'>
