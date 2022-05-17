@@ -1,5 +1,5 @@
 .blog-overview{
-    width: 700px;
+    width: 750px;
     height: 258px;
     border-bottom: 1px solid rgb(233, 224, 224);
     padding-top: 50px;
@@ -17,11 +17,18 @@
     justify-content: space-between;
     margin-top: 13px;
 }
+blog-overview__blog-tbi{
+    display: flex;
+    justify-content: space-between;
+}
 .blog-overview__blog-tbi > div:first-child{
-    width: 532px;
+    width: 570px;
 }
 .blog-overview__blog-tbi h2{
     margin-top: 0px;
+}
+.blog-overview__blog-tbi h2+p{
+    font-size: 17px;
 }
 .blog-overview__blog-tbi img{
     width: 140px;
