@@ -1,10 +1,10 @@
-import { AdminPanel } from './Components/AdminPanel/AdminPanel'
+import { Blogs } from './Pages/Blogs/Blogs'
 
 function App() {
 
   return (
     <div>
-      {/* <AdminPanel/> */}
+      <Blogs/>
     </div>
   )
 }
