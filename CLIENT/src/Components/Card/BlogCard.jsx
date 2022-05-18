@@ -2,7 +2,7 @@ import { Avatar } from '@mui/material'
 import { Link } from 'react-router-dom'
 import './blogcard.css'
 
-export const BlogCard = ({ blog, id }) => {
+export const BlogCard = ({ blog, _id }) => {
 
     return (
         <div className="blog-overview">
@@ -13,7 +13,7 @@ export const BlogCard = ({ blog, id }) => {
                     <span> . {"5 days ago"}</span>
                 </div>
             </div>
-            <Link to={`${"username"}/${id}`}
+            <Link to={`${"username"}/${_id}`}
             style={{ textDecoration : "none", color : 'black'}}
             >
                 <div className="blog-overview__blog-tbi">
