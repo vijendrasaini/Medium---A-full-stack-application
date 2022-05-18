@@ -3,9 +3,18 @@ import SearchIcon from '@mui/icons-material/Search';
 import './searchBox.css'
 import { useRef, useState } from "react";
 
+
 export const SearchBox = () => {
 
     const [searchText, setSearchText] = useState("")
+    const searchByTag = async ()=>{
+        try {
+            const response = await fetch()
+            const data = await fetch()
+        } catch (error) {
+            
+        }
+    }
     return (
         <>
             <div
@@ -16,7 +25,16 @@ export const SearchBox = () => {
                 </IconButton>
                 <input
                     type="text"
-                    placeholder="Search by tags" />
+                    value={searchText}
+                    onChange={(e) => setSearchText(e.target.value)}
+                    placeholder="Search by tags"
+                />
+                <button
+                    className="search-btn"
+                    onClick={ searchByTag }
+                >
+                    Search
+                </button>
             </div>
         </>
     )
