@@ -1,30 +1,25 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { BlogCard } from '../Card/BlogCard'
-import { baseURL } from '../../Resources/universalData'
 import "./blogsContainer.css"
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchBlogs } from '../../Redux/Blog/actioncreator'
 
 
 export const BlogsContainer = () => {
 
-    const [ blogsArr, setBlogsArr] = useState([])
+    
+    const {blogs } = useSelector(store=> store)
+    const dispatch = useDispatch()
+
     useEffect(()=>{
-        fetchBlogsSummeries()
+        dispatch(fetchBlogs())
     },[])
-    async function fetchBlogsSummeries(){
-        const path = '/blogs'
-        try {
-            const response = await fetch(`${baseURL}${path}`)
-            const data = await response.json()
-            setBlogsArr(data) 
-        } catch (error) {
-            console.log({message : error.message})   
-        }
-    }
+    
     return (
         <div className='blogs-container'>
             <div>
                 {
-                    blogsArr?.map(blog => <BlogCard 
+                    blogs?.map(blog => <BlogCard 
                         key={blog._id}
                         { ...blog}
                     />)
