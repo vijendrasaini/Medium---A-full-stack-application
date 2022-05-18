@@ -7,25 +7,18 @@ import './blogInDetail.css'
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { baseURL } from "../../Resources/universalData";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchFullBlog } from "../../Redux/Blog/actioncreator";
 
 export const BlogInDetail = () => {
 
     const { blogId } = useParams()
-    const [ blog, setBlog] = useState({})
+    const dispatch = useDispatch()
+    const { blog} = useSelector(store=> store)
     useEffect(()=>{
-        fetchBlogById()
+        dispatch(fetchFullBlog(blogId))
     },[])
-    async function fetchBlogById(){
-        const path = '/blog'
-        try {
-            const response = await fetch(`${baseURL}${path}/${blogId}`)
-            const data = await response.json()
-            setBlog(data)
-        } catch (error) {
-            console.log({ message : error.message})
-        }
-    }
+    
     return (
         <div className="blogs-container">
             <div className="blog-content">
