@@ -4,9 +4,9 @@ const BlogSummery = require('../models/blogSummaries.model')
 
 const router = Router()
 
-router.get('/blogs', async (req, res)=>{
+router.get('/', async (req, res)=>{
     try {
-        const blogs = await BlogSummery.aggregate()
+        const blogs = await BlogSummery.find().lean().exec()
         return res
         .status(200)
         .send(blogs)
