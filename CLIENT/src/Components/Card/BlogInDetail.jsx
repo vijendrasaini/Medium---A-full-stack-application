@@ -17,7 +17,7 @@ export const BlogInDetail = () => {
         fetchBlogById()
     },[])
     async function fetchBlogById(){
-        const path = '/blogs'
+        const path = '/blog'
         try {
             const response = await fetch(`${baseURL}${path}/${blogId}`)
             const data = await response.json()
