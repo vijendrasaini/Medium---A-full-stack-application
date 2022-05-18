@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { BlogCard } from '../Card/BlogCard'
+import { baseURL } from '../../Resources/universalData'
 import "./blogsContainer.css"
 
 
@@ -7,15 +8,14 @@ export const BlogsContainer = () => {
 
     const [ blogsArr, setBlogsArr] = useState([])
     useEffect(()=>{
-        sendData()
+        fetchBlogsSummeries()
     },[])
-    async function sendData(){
-        const url = 'http://localhost:7000/blogSummaries'
+    async function fetchBlogsSummeries(){
+        const path = '/blogs'
         try {
-            const response = await fetch(url)
+            const response = await fetch(`${baseURL}${path}`)
             const data = await response.json()
-            setBlogsArr(data)
-
+            setBlogsArr(data) 
         } catch (error) {
             console.log({message : error.message})   
         }
@@ -25,17 +25,10 @@ export const BlogsContainer = () => {
             <div>
                 {
                     blogsArr?.map(blog => <BlogCard 
-                        key={blog.id}
+                        key={blog._id}
                         { ...blog}
                     />)
                 }
-                {/* <BlogCard />
-                <BlogCard />
-                
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard /> */}
             </div>
         </div>
     )
