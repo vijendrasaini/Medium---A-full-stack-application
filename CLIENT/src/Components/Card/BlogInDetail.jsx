@@ -21,7 +21,6 @@ export const BlogInDetail = () => {
         try {
             const response = await fetch(`${baseURL}${path}/${blogId}`)
             const data = await response.json()
-            console.log(data)
             setBlog(data)
         } catch (error) {
             console.log({ message : error.message})
