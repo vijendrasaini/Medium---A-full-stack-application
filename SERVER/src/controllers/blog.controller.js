@@ -32,8 +32,8 @@ router.post('/', async (req, res) => {
 
 router.get('/:blogId', async (req, res) => {
     try {
-        const blog = await Blog.findById(req.params.blogId).lean().exec()
-
+        let blog = await Blog.find({ blogId : req.params.blogId}).lean().exec()
+        blog = Array.isArray(blog) ? blog[0] : blog
         return res
             .status(200)
             .send(blog)
