@@ -18,3 +18,14 @@
     font-size : 17.3px;
     border : none;
 }
+.search-btn{
+    background : white;
+    border-radius : 99px;
+    border: 1px solid rgb(220, 212, 212);
+    font-size : 17.3px;
+    padding: 4px 20px;
+}
+.search-btn:hover{
+    cursor: pointer;
+    background-color: rgb(184, 182, 182);
+}
