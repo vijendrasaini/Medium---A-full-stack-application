@@ -1,16 +1,20 @@
 const express = require('express')
+const cors = require('cors')
 
 const mongoConnect = require('./configs/db')
 const blogController = require('./controllers/blog.controller')
 const userController = require('./controllers/user.controller')
+const blogsController = require('./controllers/blogSummeries.controller')
 
 const app = express()
 const port = process.env.PORT || 7000
 
 app.use(express.json())
+app.use(cors())
 
 app.use('/blog', blogController)
 app.use('/user', userController)
+app.use('/blogs', blogsController)
 
 module.exports = () => {
     try {
