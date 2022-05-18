@@ -25,6 +25,7 @@ export const fetchFullBlog = (blogId)=>async function fetchBlogById(dispatch){
         const response = await fetch(`${baseURL}${path}/${blogId}`)
         const data = await response.json()
         dispatch(setFullBlog(data))
+        dispatch(setTags(data.tags))
     } catch (error) {
         console.log({ message : error.message})
     }
