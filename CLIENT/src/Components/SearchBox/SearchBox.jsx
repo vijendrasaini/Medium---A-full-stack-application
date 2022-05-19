@@ -21,7 +21,7 @@ export const SearchBox = () => {
                 </IconButton>
                 <input
                     type="text"
-                    value = {searchText == "" ? ( searchKeyword == ""  ? "billion" : searchKeyword ) : searchText}
+                    value = {searchText == "" ? searchKeyword : searchText}
                     onChange = { (e) => setSearchText(e.target.value) }
                     placeholder="Search by tags"
                 />
