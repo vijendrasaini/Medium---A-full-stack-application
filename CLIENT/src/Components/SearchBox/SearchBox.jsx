@@ -2,7 +2,7 @@ import { IconButton } from "@mui/material"
 import SearchIcon from '@mui/icons-material/Search';
 import './searchBox.css'
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { fetchBlogs } from "../../Redux/Blog/actioncreator";
 import { useNavigate } from "react-router-dom";
 
@@ -10,11 +10,10 @@ import { useNavigate } from "react-router-dom";
 export const SearchBox = () => {
 
     const [searchText, setSearchText] = useState("")
-    const { searchKeyword } = useSelector(store => store)
     const navigate = useNavigate()
     const dispatch = useDispatch()
     return (
-        <div>
+        <div >
             <div
                 className="search-box"
             >
