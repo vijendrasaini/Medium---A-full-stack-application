@@ -11,7 +11,6 @@ export const BlogsContainer = () => {
     
     const {blogs, searchKeyword } = useSelector(store=> store)
     const dispatch = useDispatch()
-    console.log({searchKeyword})
     useEffect(()=>{
         dispatch(fetchBlogs(searchKeyword))
     },[])
