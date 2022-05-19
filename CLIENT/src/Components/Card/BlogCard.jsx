@@ -1,20 +1,21 @@
 import { Avatar } from '@mui/material'
 import { Link } from 'react-router-dom'
+import { timeSince } from '../../Resources/universalData'
 import './blogcard.css'
 
-export const BlogCard = ({ blog, _id, user }) => {
-
+export const BlogCard = ({ blog, _id, user, createdAt }) => {
+    console.log({ blog, _id, user, createdAt})
     return (
         <div className="blog-overview">
             <div className='blog-overview__user-and-time'>
                 <Avatar sx={{ height: 30, width: 30 }} src={user?.avatar} alt={user?.name} />
                 <div>
                     <span>{user?.name}</span>
-                    <span> . {"5 days ago"}</span>
+                    <span> . {timeSince(new Date(createdAt).getTime(), createdAt)}</span>
                     <span> . {"2 min read"}</span>
                 </div>
             </div>
-            <Link to={`${"username"}/${_id}`}
+            <Link to={`/user/${_id}`}
             style={{ textDecoration : "none", color : 'black'}}
             >
                 <div className="blog-overview__blog-tbi">
