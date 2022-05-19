@@ -8,11 +8,11 @@ import { fetchBlogs } from '../../Redux/Blog/actioncreator'
 export const BlogsContainer = () => {
 
     
-    const {blogs } = useSelector(store=> store)
+    const {blogs, searchKeyword } = useSelector(store=> store)
     const dispatch = useDispatch()
 
     useEffect(()=>{
-        dispatch(fetchBlogs())
+        dispatch(fetchBlogs(searchKeyword))
     },[])
     
     return (
