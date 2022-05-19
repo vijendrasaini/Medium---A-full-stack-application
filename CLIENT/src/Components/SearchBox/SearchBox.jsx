@@ -1,20 +1,16 @@
 import { IconButton } from "@mui/material"
 import SearchIcon from '@mui/icons-material/Search';
 import './searchBox.css'
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBlogs } from "../../Redux/Blog/actioncreator";
 
 
 export const SearchBox = () => {
 
     const [searchText, setSearchText] = useState("")
-    const searchByTag = async ()=>{
-        try {
-            const response = await fetch()
-            const data = await fetch()
-        } catch (error) {
-            
-        }
-    }
+    const { searchKeyword } = useSelector(store => store)
+    const dispatch = useDispatch()
     return (
         <>
             <div
@@ -25,13 +21,13 @@ export const SearchBox = () => {
                 </IconButton>
                 <input
                     type="text"
-                    value={searchText}
-                    onChange={(e) => setSearchText(e.target.value)}
+                    value = {searchText == "" ? ( searchKeyword == ""  ? "billion" : searchKeyword ) : searchText}
+                    onChange = { (e) => setSearchText(e.target.value) }
                     placeholder="Search by tags"
                 />
                 <button
                     className="search-btn"
-                    onClick={ searchByTag }
+                    onClick = { () => dispatch(fetchBlogs(searchText)) }
                 >
                     Search
                 </button>
