@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFullBlog } from "../../Redux/Blog/actioncreator";
-import { SearchBox } from "../SearchBox/SearchBox";
+import { timeSince } from "../../Resources/universalData";
 
 export const BlogInDetail = () => {
 
@@ -34,8 +34,8 @@ export const BlogInDetail = () => {
                                     <button className="blog-content__follow-btn">Follow</button>
                                 </div>
                                 <div>
-                                    <span>Dec 2, 2021</span>
-                                    <span> . {8} min read</span>
+                                    <span>{timeSince(new Date(blog?.createdAt).getTime(), blog?.createdAt)}</span>
+                                    <span> . {Math.ceil(blog?.htmlContent.length/(200 * 10))} min read</span>
                                 </div>
                             </div>
                         </div>
