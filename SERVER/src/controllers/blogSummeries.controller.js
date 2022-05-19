@@ -40,16 +40,21 @@ router.get('/:tag', async (req, res)=>{
                 }
             },
             {
-                $project : {
-                    "blog" : "$blogsOverview.blog",
-                    "_id" : "$blogsOverview._id"
+                $lookup : {
+                    from : "users",
+                    localField : "blogsOverview.userId",
+                    foreignField : "_id",
+                    as : "user"
                 }
-            }
+            },
         ])
         blogs = blogs.map(el =>{
+            // console.log(el)
             return ({
-                _id : el._id[0],
-                blog : el.blog[0]
+                _id : el._id,
+                blog : el.blogsOverview[0].blog,
+                user : el.user[0],
+                createdAt : el.blogsOverview[0].createdAt
             })
         })
         return res
