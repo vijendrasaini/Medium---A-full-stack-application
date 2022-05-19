@@ -18,3 +18,6 @@
 .tags-container div>span{
     font-weight: 500;
 }
+.tags-container div>span:hover{
+    cursor: pointer;
+}
