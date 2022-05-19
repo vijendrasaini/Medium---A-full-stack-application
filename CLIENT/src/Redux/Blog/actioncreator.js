@@ -1,23 +1,28 @@
 import { baseURL } from "../../Resources/universalData";
-import { SETBLOGS, SETFULLBLOG, SETTAGS } from "./action";
+import { SETBLOGS, SETFULLBLOG, SETSEARCHKEYWORD, SETSEARCHTAG, SETTAGS } from "./action";
 
 
 
 export const setTags = (payload)=>({ type : SETTAGS, payload})
 export const setBlogs = (payload) => ({ type : SETBLOGS, payload})
 export const setFullBlog = (payload) => ( { type : SETFULLBLOG, payload})
+export const setSearchTag = (payload) => ( { type : SETSEARCHTAG, payload})
+export const setSearchKeyword = (payload) => ( { type : SETSEARCHKEYWORD , payload})
 
 
-export const fetchBlogs = ()=>async function fetchBlogsSummeries(dispatch){
+
+export const fetchBlogs = (tag)=>async function fetchBlogsSummeries(dispatch){
     const path = '/blogs'
     try {
-        const response = await fetch(`${baseURL}${path}`)
+        dispatch(setSearchKeyword(tag))            
+        const response = await fetch(`${baseURL}${path}/${tag}`)
         const data = await response.json()
         dispatch(setBlogs(data))
     } catch (error) {
         console.log({message : error.message})   
     }
 }
+
 
 export const fetchFullBlog = (blogId)=>async function fetchBlogById(dispatch){
     const path = '/blog'
