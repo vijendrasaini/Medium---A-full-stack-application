@@ -19,8 +19,8 @@ export const BlogCard = ({ blog, _id }) => {
                 <div className="blog-overview__blog-tbi">
                     <div>
                         <div>
-                            <h2>{ blog?.title || "7 daily habits to increase your self-confidence"}</h2>
-                            <p>{(blog?.body || "1. The Mayo Clinic Guide to Stress-Free Living. by Amit Sood. This book is based on the stress management program that Dr. Sood, a physician specialized in integrative medicine, has offered at Mayo Clinic and is a")  + " ..."}</p>
+                            <h2>{ blog?.title }</h2>
+                            <p>{blog?.body + " ..."}</p>
                         </div>
                         <div>
                             <div className='blog-overview__tags'>
