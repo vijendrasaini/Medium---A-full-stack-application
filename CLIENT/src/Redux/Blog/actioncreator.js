@@ -10,7 +10,6 @@ export const setSearchTag = (payload) => ( { type : SETSEARCHTAG, payload})
 export const setSearchKeyword = (payload) => ( { type : SETSEARCHKEYWORD , payload})
 
 
-
 export const fetchBlogs = (tag)=>async function fetchBlogsSummeries(dispatch){
     const path = '/blogs'
     try {
