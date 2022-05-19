@@ -1,7 +1,25 @@
+.blogs-page{
+    display: flex;
+    margin-left: 100px;
+}
+
 .blogs-container{
     display: flex;
     justify-content: center;
+    padding: 0px 150px;
     width: 68%;
-    border-left: 1px solid rgb(233, 224, 224);
     border-right: 1px solid rgb(233, 224, 224);
+}
+.blogs-page__tags{
+    padding-left: 40px;
+    margin-top: 60px;
+}
+.blogs-container__no-results{
+    width: 745px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blogs-container__no-results img{
+    width: 600px;
 }
