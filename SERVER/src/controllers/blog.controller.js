@@ -1,6 +1,8 @@
 const { Router } = require('express')
+const ObjectId = require('mongoose').Types.ObjectId
 const Blog = require('../models/blog.model')
 const BlogSummery = require('../models/blogSummaries.model')
+
 
 
 const router = Router()
@@ -23,7 +25,6 @@ router.post('/', async (req, res) => {
             .status(200)
             .send({status : "success"})
     } catch (error) {
-        console.log({message : error.message})
         return res
             .status(500)
             .send({ status : "failure"})
@@ -32,7 +33,35 @@ router.post('/', async (req, res) => {
 
 router.get('/:blogId', async (req, res) => {
     try {
-        let blog = await Blog.find({ blogId : req.params.blogId}).lean().exec()
+        let blog = await Blog.aggregate([
+            {
+                $match : {
+                    blogId : ObjectId(req.params.blogId) 
+                }
+            },
+            {
+                $lookup : {
+                    from : "blogsummaries",
+                    localField : "blogId",
+                    foreignField : "_id",
+                    as : "blogsummery"
+                }
+            },
+            {
+                $unwind : "$blogsummery"
+            },
+            {
+                $lookup : {
+                    from : "users",
+                    localField : "blogsummery.userId",
+                    foreignField : "_id",
+                    as : "user"
+                }
+            },
+            {
+                $unwind : "$user"
+            }
+        ])
         blog = Array.isArray(blog) ? blog[0] : blog
         return res
             .status(200)
