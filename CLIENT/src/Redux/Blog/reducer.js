@@ -6,6 +6,7 @@ const initState = {
     blog : {},
     tags : [],
     searchKeyword : "",
+    loading : false
 };
 export const reducer = (state = initState, { type, payload} ) =>{
     switch (type) {
