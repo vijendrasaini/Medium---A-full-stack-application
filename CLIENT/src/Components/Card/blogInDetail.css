@@ -67,3 +67,9 @@
 .blog-content__footer > div:last-child{
     gap: 20px;
 }
+.user-card img{
+    margin-top: 40px;
+    width: 100px;
+    height:  100px;
+    border-radius:  50%;
+}
