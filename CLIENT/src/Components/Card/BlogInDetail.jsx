@@ -21,7 +21,7 @@ export const BlogInDetail = () => {
 
     return (
         <>
-            <div className="blogs-container">
+            <div className="blog-container">
                 <div className="blog-content">
                     <div className="blog-content__header">
                         <div>
@@ -72,7 +72,6 @@ export const BlogInDetail = () => {
                 </div>
             </div>
             <div className="user-card">
-                {/* <SearchBox/> */}
                 <img src={blog?.user?.avatar} alt={blog?.user?.name} />
                 <h3>{blog?.user?.name}</h3>
             </div>
