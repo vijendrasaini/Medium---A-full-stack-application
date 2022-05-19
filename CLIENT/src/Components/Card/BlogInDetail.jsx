@@ -35,7 +35,7 @@ export const BlogInDetail = () => {
                                 </div>
                                 <div>
                                     <span>{timeSince(new Date(blog?.createdAt).getTime(), blog?.createdAt)}</span>
-                                    <span> . {Math.ceil(blog?.htmlContent.length/(200 * 10))} min read</span>
+                                    <span> . {Math.ceil(blog?.htmlContent?.length/(200 * 10))} min read</span>
                                 </div>
                             </div>
                         </div>
