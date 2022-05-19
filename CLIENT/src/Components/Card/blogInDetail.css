@@ -1,4 +1,4 @@
-.blogs-container{
+.blog-container{
     display: flex;
     justify-content: center;
     width: 68%;
@@ -66,6 +66,10 @@
 }
 .blog-content__footer > div:last-child{
     gap: 20px;
+}
+.user-card{
+    padding-left: 50px;
+    margin-top: 60px;
 }
 .user-card img{
     margin-top: 40px;
