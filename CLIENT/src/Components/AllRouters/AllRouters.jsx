@@ -1,15 +1,19 @@
+import { useSelector } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
 import { AdminPanel } from '../AdminPanel/AdminPanel'
 import { BlogsContainer } from '../BlogsContainer/BlogsContainer'
 import { BlogInDetail } from '../Card/BlogInDetail'
 import { SearchBox } from '../SearchBox/SearchBox'
+import { Loading } from '../Loading/Loading'
+
 import "./routers.css"
 
 
 export const AllRouters = ()=>{
 
-
-    return(
+    const { loading } = useSelector(store => store)
+    return loading ? <Loading/> : 
+    (
         <div>
             <AdminPanel/>
             <div className='routes'>
