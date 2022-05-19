@@ -5,12 +5,12 @@ import './trendingTags.css'
 
 export const TrendingTags = () => {
 
-    const { tags } = useSelector(store=> store)
+    const { tags, searchKeyword } = useSelector(store=> store)
     const dispatch = useDispatch()
 
     return (
         <div className="popular-tags">
-            <h3>Topics matching {"bussiness"}</h3>
+            <h3>Topics matching with {searchKeyword}</h3>
             <div className='tags-container'>
                 { tags.map((tag, index) => <div key={index}><span onClick={ ()=> dispatch(fetchBlogs(tag)) } >{tag}</span></div>)}
             </div>
