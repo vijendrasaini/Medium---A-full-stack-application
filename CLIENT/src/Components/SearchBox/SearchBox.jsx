@@ -4,15 +4,17 @@ import './searchBox.css'
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogs } from "../../Redux/Blog/actioncreator";
+import { useNavigate } from "react-router-dom";
 
 
 export const SearchBox = () => {
 
     const [searchText, setSearchText] = useState("")
     const { searchKeyword } = useSelector(store => store)
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     return (
-        <>
+        <div>
             <div
                 className="search-box"
             >
@@ -21,17 +23,21 @@ export const SearchBox = () => {
                 </IconButton>
                 <input
                     type="text"
-                    value = {searchText == "" ? searchKeyword : searchText}
+                    value = {searchText}
                     onChange = { (e) => setSearchText(e.target.value) }
                     placeholder="Search by tags"
                 />
                 <button
                     className="search-btn"
-                    onClick = { () => dispatch(fetchBlogs(searchText)) }
+                    disabled={searchText == "" }
+                    onClick = { () => {
+                        dispatch(fetchBlogs(searchText))
+                        navigate("/")
+                    } }
                 >
                     Search
                 </button>
             </div>
-        </>
+        </div>
     )
 }

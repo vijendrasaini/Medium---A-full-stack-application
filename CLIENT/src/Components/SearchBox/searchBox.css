@@ -1,4 +1,6 @@
 .search-box {
+    position: fixed;
+    right: 100px;
     width :  388px;
     border: 1px solid rgb(220, 212, 212);
     border-radius : 99px;
@@ -28,4 +30,8 @@
 .search-btn:hover{
     cursor: pointer;
     background-color: rgb(184, 182, 182);
+}
+.search-btn:disabled{
+    cursor:not-allowed;
+    background-color: white;
 }
