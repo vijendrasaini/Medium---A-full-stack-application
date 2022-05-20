@@ -4,7 +4,7 @@ import './searchBox.css'
 import { useState } from "react";
 import { useDispatch} from "react-redux";
 import { fetchBlogs } from "../../Redux/Blog/actioncreator";
-import { useNavigate } from "react-router-dom";
+import { Route, useNavigate } from "react-router-dom";
 
 
 export const SearchBox = () => {
@@ -13,6 +13,10 @@ export const SearchBox = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     return (
+        // <Route
+        //     path={"/signup"}
+        //     render
+        // />
         <div >
             <div
                 className="search-box"
