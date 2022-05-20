@@ -35,35 +35,46 @@ const signup = async (req, res, next) => {
 }
 
 const signin = async (req, res, next) => {
-    const user = await User.findOne({ email: req.body.email })
-    if (user)
+    try {
+        const user = await User.findOne({ email: req.body.email })
+        if (!user)
+            return res
+                .status(404)
+                .send(
+                    {
+                        status: "failure",
+                        reason: 'User not found'
+                    }
+                )
+        const passwordMatch = user.checkPassword(req.body.password)
+        if (!passwordMatch)
+            return res
+                .status(404)
+                .send(
+                    {
+                        status: "failure",
+                        reason: 'Credentails are wrong.'
+                    }
+                )
+        const token = newToken(user)
         return res
-            .status(404)
+            .status(200)
             .send(
                 {
-                    status: "failure",
-                    reason: 'User not found'
+                    status: "success",
+                    name : user.name,
+                    avatar : user.avatar,
+                    email : user.email,
+                    username : user.email,
+                    token
                 }
             )
-    const passwordMatch = user.checkPassword(req.body.password)
-    if (!passwordMatch)
+    } catch (error) {
         return res
-            .status(404)
-            .send(
-                {
-                    status: "failure",
-                    reason: 'Credentails are wrong.'
-                }
-            )
-    const token = newToken(user)
-    return res
-        .status(200)
-        .send(
-            {
-                status: "success",
-                token
-            }
-        )
+            .status(201)
+            .send({ status: 'failure' })
+    }
+
 }
 
 module.exports = { signin, signup, newToken }
