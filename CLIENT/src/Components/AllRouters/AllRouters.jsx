@@ -135,14 +135,7 @@ export const AllRouters = () => {
                 } />
             </Routes>
             <Dialog open={signInOpen} onClose={handleSignInOpen}>
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        margin: 100
-                    }}
-                >
+                <div className='signin-pop-up login-pop-up'>
                     <Avatar sx={{ m: 3, bgcolor: 'primary.main' }} src={logo}>
                     </Avatar>
                     <Typography component="h1" variant="h4" sx={{ fontWeight: "bold" }}>
@@ -205,19 +198,15 @@ export const AllRouters = () => {
                                     {" Sign Up"}
                                 </span>
                             </Grid>
+                            <div className='skip-for-now'>
+                                <span>I will do it later</span>
+                            </div>
                         </Box>
                     </div>
                 </div>
             </Dialog>
             <Dialog open={signUpOpen} onClose={handleSignUpOpen}>
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        margin: 100
-                    }}
-                >
+                <div className='signup-pop-up login-pop-up'>
                     <Avatar sx={{ m: 3, bgcolor: 'primary.main' }} src={logo}>
                     </Avatar>
                     <Typography component="h1" variant="h4" sx={{ fontWeight: "bold" }}>
