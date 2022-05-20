@@ -4,7 +4,7 @@ import './trendingTags.css'
 
 export const TrendingTags = () => {
 
-    const { tags, searchKeyword } = useSelector(store=> store)
+    const { tags, searchKeyword } = useSelector(store=> store.blog)
     const dispatch = useDispatch()
     const defaultTags = ["billion", "character", "mindset", "self-help"]
     return (
