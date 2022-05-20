@@ -13,10 +13,6 @@ export const SearchBox = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     return (
-        // <Route
-        //     path={"/signup"}
-        //     render
-        // />
         <div >
             <div
                 className="search-box"
