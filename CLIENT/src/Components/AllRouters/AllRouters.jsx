@@ -42,8 +42,6 @@ export const AllRouters = () => {
     const signUp = async () => {
         try {
             const path = '/register'
-            console.log(user)
-            // return
             const response = await fetch(`${baseURL}${path}`, {
                 method: "POST",
                 body: JSON.stringify(user),
@@ -53,6 +51,12 @@ export const AllRouters = () => {
             })
             const result = await response.json()
             console.log(result)
+            if (result?.status == 'failure')
+                return
+            else {
+                setSignUpOpen(false)
+                setSignInOpen(true)
+            }
         } catch (error) {
             console.log({ error: error.message })
         }
@@ -83,7 +87,7 @@ export const AllRouters = () => {
             setSignInOpen(true)
         }, 2000)
     }
-    const sendForSignUp = () =>{
+    const sendForSignUp = () => {
         setSignInOpen(false)
         setSignUpOpen(true)
     }
@@ -179,8 +183,8 @@ export const AllRouters = () => {
                                 Don't have an account?
                                 <span className='take_me_on_signUp_comp'
                                     style={{
-                                        color : 'blue',
-                                        textDecoration : 'underline',
+                                        color: 'blue',
+                                        textDecoration: 'underline',
                                     }}
                                     onClick={sendForSignUp}
                                 >
@@ -255,8 +259,8 @@ export const AllRouters = () => {
                                         padding: "10px 0px",
                                         fontWeight: '600',
                                         textTransform: 'none',
-                                        '&:disabled' : {
-                                            background : "#ADD8E6"
+                                        '&:disabled': {
+                                            background: "#ADD8E6"
                                         }
                                     }}
                                     onClick={signUp}
