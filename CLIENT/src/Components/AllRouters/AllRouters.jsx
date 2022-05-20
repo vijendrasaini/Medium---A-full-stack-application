@@ -92,6 +92,9 @@ export const AllRouters = () => {
         }
     }
     const checkLoggedUser = () => {
+        if(authStatus)
+            return 
+        console.log({authStatus})
         if (Id.current)
             return
         Id.current = setTimeout(() => {
