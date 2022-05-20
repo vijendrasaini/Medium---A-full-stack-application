@@ -17,14 +17,16 @@ const signup = async (req, res, next)=>{
                     reason : "User already exits"
                 }
             )
+        console.log(req.body)
+        return res.send({ status : "success"})
         user = await User.create(req.body)
         return res
         .status(201)
-        .send({ status : 'success',username : user.email})
+        .send({ status : 'success'})
     } catch (error) {
         return res
         .status(201)
-        .send({ status : 'success',username : user.email})
+        .send({ status : 'success'})
     }
 }
 
