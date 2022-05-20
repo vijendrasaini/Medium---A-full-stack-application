@@ -62,11 +62,13 @@ const signin = async (req, res, next) => {
             .send(
                 {
                     status: "success",
-                    name : user.name,
-                    avatar : user.avatar,
-                    email : user.email,
-                    username : user.email,
-                    token
+                    user : {
+                        name : user.name,
+                        avatar : user.avatar,
+                        email : user.email,
+                        username : user.email,
+                        token
+                    }
                 }
             )
     } catch (error) {
