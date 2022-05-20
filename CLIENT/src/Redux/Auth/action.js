@@ -1,2 +1,4 @@
 export const AUTH_STATUS = "AUTH_STATUS"
 export const LOGGED_USER = "LOGGED_USER"
+export const SING_IN_ALERT =  "SING_IN_ALERT"
+export const OPEN_SIGNIN_POPUP = "OPEN_SIGNIN_POPUP"
