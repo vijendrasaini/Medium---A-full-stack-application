@@ -3,7 +3,7 @@ import { AUTH_STATUS, LOGGED_USER} from "./action";
 
 const initState = {
     authStatus : false,
-    loggedUser : {}
+    loggedUser : JSON.parse(localStorage.getItem('user')) || null
 };
 export const reducer = (state = initState, { type, payload} ) =>{
     switch (type) {
