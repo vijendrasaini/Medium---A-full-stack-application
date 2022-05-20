@@ -19,13 +19,12 @@ import './routers.css'
 
 export const AllRouters = () => {
 
-    const { loading } = useSelector(store => store)
+    const { loading } = useSelector(store => store.blog)
+    const { authStatus} = useSelector( store => store.auth)
     const Id = useRef(null)
     const [signUpOpen, setSignUpOpen] = useState(false)
     const [signInOpen, setSignInOpen] = useState(false)
     const [user, setUser] = useState({ name: "", email: "", password: ""})
-
-    // const { auth } = useSelector( store => store.)
 
     const handleInputChange = (e) => {
         const { name, value } = e.target
