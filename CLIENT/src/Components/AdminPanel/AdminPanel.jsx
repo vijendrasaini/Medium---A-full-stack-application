@@ -8,11 +8,13 @@ import ListAltIcon from '@mui/icons-material/ListAlt';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 
 import {Stack, Typography,IconButton, Avatar} from '@mui/material'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAuthStatus } from '../../Redux/Auth/actioncreator';
 
 export const AdminPanel = ()=>{
 
-    const { loggedUser } = useSelector(store => store.auth)
+    const dispatch = useDispatch()
+    const { loggedUser, authStatus } = useSelector(store => store.auth)
 
     return(
         <div>
@@ -38,7 +40,20 @@ export const AdminPanel = ()=>{
                     </IconButton>
                 </div>
                 <div className='admin-panel__user-profile-image'>
-                    { loggedUser && <Avatar src={loggedUser?.avatar} alt={loggedUser?.name}/>}
+                    { authStatus ? <div className='admin-panel__logout'>
+                        <Avatar src={loggedUser?.avatar} alt={loggedUser?.name}/>
+                        <span
+                        onClick={()=>{
+                            localStorage.removeItem('user')
+                            dispatch(setAuthStatus(false)) 
+                        }}
+                        >Logout</span>
+                    </div>
+                    :
+                    <div className='admin-panel__logout'>
+                        <span>Login</span>
+                    </div> 
+                }
                 </div>
             </div>
         </div>
