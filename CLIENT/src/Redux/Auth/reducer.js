@@ -1,4 +1,4 @@
-import { AUTH_STATUS, LOGGED_USER, SETBLOGS, SETFULLBLOG, SETSEARCHKEYWORD, SETTAGS} from "./action";
+import { AUTH_STATUS, LOGGED_USER} from "./action";
 
 
 const initState = {
