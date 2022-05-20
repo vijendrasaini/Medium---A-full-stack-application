@@ -5,6 +5,7 @@ const mongoConnect = require('./configs/db')
 const blogController = require('./controllers/blog.controller')
 const userController = require('./controllers/user.controller')
 const blogsController = require('./controllers/blogSummeries.controller')
+const googleLoginController = require('./controllers/googleLogin.controller')
 
 const app = express()
 const port = process.env.PORT || 7000
@@ -15,6 +16,7 @@ app.use(cors())
 app.use('/blog', blogController)
 app.use('/user', userController)
 app.use('/blogs', blogsController)
+app.use('/google/login',googleLoginController)
 
 module.exports = () => {
     try {
