@@ -2,7 +2,7 @@ import { AUTH_STATUS, LOGGED_USER} from "./action";
 
 
 const initState = {
-    authStatus : false,
+    authStatus : localStorage.getItem('user') ? true : false,
     loggedUser : JSON.parse(localStorage.getItem('user')) || null
 };
 export const reducer = (state = initState, { type, payload} ) =>{
