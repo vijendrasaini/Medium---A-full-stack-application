@@ -6,7 +6,7 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import './loginPage.css'
+// import './loginPage.css'
 import logo from '../AdminPanel//mediumLogo.png'
 
 
