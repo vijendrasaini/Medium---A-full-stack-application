@@ -4,7 +4,6 @@ import { timeSince } from '../../Resources/universalData'
 import './blogcard.css'
 
 export const BlogCard = ({ blog, _id, user, createdAt }) => {
-    console.log({ blog, _id, user, createdAt})
     return (
         <div className="blog-overview">
             <div className='blog-overview__user-and-time'>
