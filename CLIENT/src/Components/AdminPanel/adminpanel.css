@@ -21,3 +21,20 @@
 .admin-panel__user-profile-image{
     margin-bottom: 25px;
 }
+.admin-panel__logout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.admin-panel__logout span{
+    font-weight: bold;
+    background: rgb(188, 178, 178);
+    border-radius: 99px;
+    padding: 4px 15px;
+}
+.admin-panel__logout span:hover{
+    cursor: pointer;
+    background: 1px solid rgb(103, 40, 40);
+}
