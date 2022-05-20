@@ -14,7 +14,7 @@ export const BlogInDetail = () => {
 
     const { blogId } = useParams()
     const dispatch = useDispatch()
-    const { blog } = useSelector(store => store)
+    const { blog } = useSelector(store => store.blog)
     useEffect(() => {
         dispatch(fetchFullBlog(blogId))
     }, [])
