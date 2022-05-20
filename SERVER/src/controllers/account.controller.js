@@ -19,7 +19,7 @@ const signup = async (req, res, next) => {
                 )
         user = await User.create({
             name: req.body.name,
-            username: req.body.email.split("@")[0],
+            username: req.body.email.split('@')[0] ,
             email: req.body.email,
             password: req.body.password
         })
