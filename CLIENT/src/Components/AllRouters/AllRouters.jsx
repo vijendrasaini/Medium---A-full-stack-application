@@ -23,11 +23,10 @@ export const AllRouters = () => {
     const Id = useRef(null)
     const [signUpOpen, setSignUpOpen] = useState(false)
     const [signInOpen, setSignInOpen] = useState(false)
-    const [user, setUser] = useState({
-        name: "",
-        email: "",
-        password: "",
-    })
+    const [user, setUser] = useState({ name: "", email: "", password: ""})
+
+    // const { auth } = useSelector( store => store.)
+
     const handleInputChange = (e) => {
         const { name, value } = e.target
         setUser({ ...user, [name]: value })
