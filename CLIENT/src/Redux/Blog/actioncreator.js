@@ -14,7 +14,7 @@ export const fetchBlogs = (tag)=>async function fetchBlogsSummeries(dispatch){
     const path = '/blogs'
     try {
         dispatch(setSearchKeyword(tag))            
-        const response = await fetch(`${baseURL}${path}/${tag}`)
+        const response = await fetch(`${baseURL}${path}/${tag == "" ? "billion" : tag}`)
         dispatch(setLoading(true))
         const data = await response.json()
         dispatch(setBlogs(data))
