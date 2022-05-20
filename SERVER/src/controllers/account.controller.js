@@ -29,7 +29,7 @@ const signup = async (req, res, next) => {
     } catch (error) {
         console.log({ message: error.message })
         return res
-            .status(201)
+            .status(500)
             .send({ status: 'failure' })
     }
 }
@@ -73,7 +73,7 @@ const signin = async (req, res, next) => {
             )
     } catch (error) {
         return res
-            .status(201)
+            .status(500)
             .send({ status: 'failure' })
     }
 
