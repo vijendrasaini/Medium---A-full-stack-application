@@ -8,9 +8,11 @@ import ListAltIcon from '@mui/icons-material/ListAlt';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 
 import {Stack, Typography,IconButton, Avatar} from '@mui/material'
+import { useSelector } from 'react-redux';
 
 export const AdminPanel = ()=>{
 
+    const { loggedUser } = useSelector(store => store.auth)
 
     return(
         <div>
@@ -36,7 +38,7 @@ export const AdminPanel = ()=>{
                     </IconButton>
                 </div>
                 <div className='admin-panel__user-profile-image'>
-                    <Avatar src='vijendra' alt='user-image'/>
+                    { loggedUser && <Avatar src={loggedUser?.avatar} alt={loggedUser?.name}/>}
                 </div>
             </div>
         </div>

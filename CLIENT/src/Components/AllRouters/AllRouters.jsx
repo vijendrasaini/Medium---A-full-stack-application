@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, Route, Routes, useParams } from 'react-router-dom'
 import { AdminPanel } from '../AdminPanel/AdminPanel'
 import { BlogsContainer } from '../BlogsContainer/BlogsContainer'
@@ -14,17 +14,20 @@ import { baseURL } from '../../Resources/universalData'
 import { useEffect } from 'react'
 import { useRef } from 'react'
 import './routers.css'
+import { setAuthStatus, setLoggedUser } from '../../Redux/Auth/actioncreator'
 
 
 
 export const AllRouters = () => {
 
-    const { loading } = useSelector(store => store.blog)
-    const { authStatus} = useSelector( store => store.auth)
-    const Id = useRef(null)
     const [signUpOpen, setSignUpOpen] = useState(false)
     const [signInOpen, setSignInOpen] = useState(false)
     const [user, setUser] = useState({ name: "", email: "", password: ""})
+    const Id = useRef(null)
+    
+    const { loading } = useSelector(store => store.blog)
+    const { authStatus} = useSelector( store => store.auth)
+    const dispatch = useDispatch()
 
     const handleInputChange = (e) => {
         const { name, value } = e.target
@@ -73,7 +76,17 @@ export const AllRouters = () => {
                 }
             })
             const result = await response.json()
-            console.log(result)
+            if(result.status == 'failure')
+                return 
+            else{
+                if(result.status == 'success')
+                {
+                    dispatch(setAuthStatus(true)) 
+                    localStorage.setItem('user', JSON.stringify(result.user))
+                    dispatch(setLoggedUser(result.user))
+                    setSignInOpen(false)
+                }
+            }
         } catch (error) {
             console.log({ error: error.message })
         }
