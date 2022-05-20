@@ -1,3 +1,4 @@
+const { hashSync, compareSync } = require('bcryptjs')
 const { Schema, model } = require('mongoose')
 
 const userSchema = new Schema(
