@@ -1,3 +1,30 @@
 .take_me_on_signUp_comp{
     cursor: pointer;
 }
+.login-pop-up{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signin-pop-up{
+    margin: 50px 100px 50px 100px;
+}
+.signup-pop-up{
+    margin: 100px;
+}
+.skip-for-now{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+    color: blue;
+    text-decoration: underline;
+}
+.skip-for-now:hover{
+    cursor: pointer;
+}
+
+
+
+
+
