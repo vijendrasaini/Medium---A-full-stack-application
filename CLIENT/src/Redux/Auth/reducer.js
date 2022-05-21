@@ -5,7 +5,7 @@ const initState = {
     authStatus : localStorage.getItem('user') ? true : false,
     loggedUser : JSON.parse(localStorage.getItem('user')) || null,
     signInAlert : true,
-    openSignInPopUp : false
+    signInPopUp : false
 };
 export const reducer = (state = initState, { type, payload} ) =>{
     switch (type) {
@@ -19,7 +19,7 @@ export const reducer = (state = initState, { type, payload} ) =>{
             return { ...state, signInAlert : false}
 
         case OPEN_SIGNIN_POPUP:
-            return { ...state, openSignInPopUp : payload}
+            return { ...state, signInPopUp : payload}
 
         default:
             return state
