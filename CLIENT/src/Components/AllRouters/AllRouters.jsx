@@ -26,7 +26,7 @@ export const AllRouters = () => {
     const Id = useRef(null)
     
     const { loading } = useSelector(store => store.blog)
-    const { authStatus} = useSelector( store => store.auth)
+    const { authStatus, signInAlert} = useSelector( store => store.auth)
     const dispatch = useDispatch()
 
     const handleInputChange = (e) => {
