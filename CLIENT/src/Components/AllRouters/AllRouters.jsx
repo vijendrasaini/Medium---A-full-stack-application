@@ -103,7 +103,7 @@ export const AllRouters = () => {
         }
     }
     const sendForSignUp = () => {
-        setSignInOpen(false)
+        dispatch(setSignInPopup(false))
         setSignUpOpen(true)
     }
     useEffect(() => {
