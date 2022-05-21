@@ -5,11 +5,16 @@ const Blog = require('../models/blog.model')
 
 const router = Router()
 
-router.get('/:tag', async (req, res)=>{
+router.get('', async (req, res)=>{
     try {
-        let keyword = req.params.tag
+        let keyword = req.query.q
+        let page = +req.query.page - 1 || 0
+        let limit = +req.query.limit || 10
+        
 
-        let blogs = await Blog.aggregate([
+        let offset = page * limit
+        
+        let filter = [
             {
                 $project : {
                     _id : 0,
@@ -30,7 +35,11 @@ router.get('/:tag', async (req, res)=>{
                 $group : {
                     _id : "$blogId"
                 }
-            },
+            }
+        ]
+        let blogs = await Blog.aggregate([
+            ...filter
+            ,
             {
                 $lookup : {
                     from : "blogsummaries",
@@ -47,9 +56,17 @@ router.get('/:tag', async (req, res)=>{
                     as : "user"
                 }
             },
+            {
+                $skip : offset
+            },
+            {
+                $limit : limit
+            }
         ])
+        let totalArr = await Blog.aggregate([...filter, { $count : "total"}])
+        let total =  Math.ceil(totalArr[0].total/limit)
+        console.log(blogs)
         blogs = blogs.map(el =>{
-            // console.log(el)
             return ({
                 _id : el._id,
                 blog : el.blogsOverview[0].blog,
@@ -59,7 +76,10 @@ router.get('/:tag', async (req, res)=>{
         })
         return res
         .status(200)
-        .send(blogs)
+        .send({
+            blogs,
+            total 
+        })
     } catch (error) {
         console.log({ message : error.message})
         return res
