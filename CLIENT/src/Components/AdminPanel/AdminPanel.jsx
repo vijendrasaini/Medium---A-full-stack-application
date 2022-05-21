@@ -9,7 +9,7 @@ import BorderColorIcon from '@mui/icons-material/BorderColor';
 
 import {IconButton, Avatar} from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux';
-import { setAuthStatus, setSignInPopup } from '../../Redux/Auth/actioncreator';
+import { setAuthStatus, setSignInAlert, setSignInPopup } from '../../Redux/Auth/actioncreator';
 
 export const AdminPanel = ()=>{
 
@@ -46,13 +46,13 @@ export const AdminPanel = ()=>{
                         onClick={()=>{
                             localStorage.removeItem('user')
                             dispatch(setAuthStatus(false)) 
+                            dispatch(setSignInAlert())
                         }}
                         >Logout</span>
                     </div>
                     :
                     <div className='admin-panel__logout'>
                         <span onClick={()=>{
-                            console.log("HIHI")
                             dispatch(setSignInPopup(true))
                         }}>Login</span>
                     </div> 
