@@ -9,7 +9,7 @@ import BorderColorIcon from '@mui/icons-material/BorderColor';
 
 import {Stack, Typography,IconButton, Avatar} from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux';
-import { setAuthStatus } from '../../Redux/Auth/actioncreator';
+import { openSignInPopup, setAuthStatus } from '../../Redux/Auth/actioncreator';
 
 export const AdminPanel = ()=>{
 
@@ -51,7 +51,9 @@ export const AdminPanel = ()=>{
                     </div>
                     :
                     <div className='admin-panel__logout'>
-                        <span>Login</span>
+                        <span onClick={()=>{
+                            dispatch(openSignInPopup(true))
+                        }}>Login</span>
                     </div> 
                 }
                 </div>
