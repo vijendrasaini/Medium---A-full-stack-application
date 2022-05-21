@@ -8,9 +8,8 @@ const router = Router()
 router.get('', async (req, res)=>{
     try {
         let keyword = req.query.q
-        let page = +req.query.page - 1 || 0
+        let page = +req.query.page || 0
         let limit = +req.query.limit || 10
-        
 
         let offset = page * limit
         
@@ -65,7 +64,7 @@ router.get('', async (req, res)=>{
         ])
         let totalArr = await Blog.aggregate([...filter, { $count : "total"}])
         let total =  Math.ceil(totalArr[0].total/limit)
-        console.log(blogs)
+        console.log(blogs[0])
         blogs = blogs.map(el =>{
             return ({
                 _id : el._id,
@@ -78,7 +77,8 @@ router.get('', async (req, res)=>{
         .status(200)
         .send({
             blogs,
-            total 
+            total,
+            page 
         })
     } catch (error) {
         console.log({ message : error.message})
