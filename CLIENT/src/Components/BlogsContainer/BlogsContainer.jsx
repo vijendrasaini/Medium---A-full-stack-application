@@ -2,9 +2,8 @@ import { useEffect } from 'react'
 import { BlogCard } from '../Card/BlogCard'
 import "./blogsContainer.css"
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchBlogs, setPage } from '../../Redux/Blog/actioncreator'
+import { fetchBlogs } from '../../Redux/Blog/actioncreator'
 import { TrendingTags } from '../TrendingTags/TrendingTags'
-// import { NextandPrebtnBox } from '../Pagination/NextandPrebtnBox'
 
 
 export const BlogsContainer = () => {
@@ -35,17 +34,20 @@ export const BlogsContainer = () => {
                         }
                     </div>
                     <div className='pagn-container'>
-                        <div>
-                            <button disabled={page == 0} onClick={()=>{
-                                dispatch(fetchBlogs(searchKeyword, page - 1 ))
-                            }
-                            }>{"<"}</button>
-                            <button>{page + 1}</button>
-                            <button disabled={page == total - 1} onClick={()=>{
-                                dispatch(fetchBlogs(searchKeyword, page  + 1 ))
-                            }
-                            }>{">"}</button>
-                        </div>
+                        {
+                            blogs?.length == 0 &&
+                            <div>
+                                <button disabled={page == 0} onClick={() => {
+                                    dispatch(fetchBlogs(searchKeyword, page - 1))
+                                }
+                                }>{"<"}</button>
+                                <button>{page + 1}</button>
+                                <button disabled={page == total - 1} onClick={() => {
+                                    dispatch(fetchBlogs(searchKeyword, page + 1))
+                                }
+                                }>{">"}</button>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
