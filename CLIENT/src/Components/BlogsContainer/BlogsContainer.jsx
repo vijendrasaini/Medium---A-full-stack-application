@@ -7,8 +7,6 @@ import { TrendingTags } from '../TrendingTags/TrendingTags'
 
 
 export const BlogsContainer = () => {
-
-
     const { blogs: { blogs, total, page }, searchKeyword } = useSelector(store => store.blog)
     const dispatch = useDispatch()
     useEffect(() => {
