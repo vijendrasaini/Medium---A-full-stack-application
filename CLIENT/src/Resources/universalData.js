@@ -1,4 +1,5 @@
-export const baseURL = "http://localhost:7000"
+// export const baseURL = "http://localhost:7000"
+export const baseURL = "https://medium365.herokuapp.com"
 
 
 export function timeSince(timeStamp, date) {
