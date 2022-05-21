@@ -23,8 +23,17 @@
 .skip-for-now:hover{
     cursor: pointer;
 }
+.search-box-container{
+    position: fixed;
+}
 
 
+.search-box-container>div{
+    display: flex;
+    justify-content: center;
+    width: 1145px;
+    margin-left: 100px;
+}
 
 
 
