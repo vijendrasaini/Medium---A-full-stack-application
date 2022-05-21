@@ -1,5 +1,4 @@
 const { Router } = require('express')
-const BlogSummery = require('../models/blogSummaries.model')
 const Blog = require('../models/blog.model')
 
 
@@ -12,7 +11,6 @@ router.get('', async (req, res)=>{
         let limit = +req.query.limit || 10
 
         let offset = page * limit
-        
         let filter = [
             {
                 $project : {
@@ -64,7 +62,6 @@ router.get('', async (req, res)=>{
         ])
         let totalArr = await Blog.aggregate([...filter, { $count : "total"}])
         let total =  Math.ceil(totalArr[0].total/limit)
-        console.log(blogs[0])
         blogs = blogs.map(el =>{
             return ({
                 _id : el._id,
@@ -77,7 +74,7 @@ router.get('', async (req, res)=>{
         .status(200)
         .send({
             blogs,
-            total,
+            total : total ? total : 0,
             page 
         })
     } catch (error) {
