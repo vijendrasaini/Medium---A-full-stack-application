@@ -7,9 +7,9 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 
-import {Stack, Typography,IconButton, Avatar} from '@mui/material'
+import {IconButton, Avatar} from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux';
-import { openSignInPopup, setAuthStatus } from '../../Redux/Auth/actioncreator';
+import { setAuthStatus, setSignInPopup } from '../../Redux/Auth/actioncreator';
 
 export const AdminPanel = ()=>{
 
@@ -52,7 +52,8 @@ export const AdminPanel = ()=>{
                     :
                     <div className='admin-panel__logout'>
                         <span onClick={()=>{
-                            dispatch(openSignInPopup(true))
+                            console.log("HIHI")
+                            dispatch(setSignInPopup(true))
                         }}>Login</span>
                     </div> 
                 }
