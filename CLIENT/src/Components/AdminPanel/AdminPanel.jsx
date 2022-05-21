@@ -7,16 +7,17 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 
-import {IconButton, Avatar} from '@mui/material'
+import { IconButton, Avatar } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux';
 import { setAuthStatus, setSignInAlert, setSignInPopup } from '../../Redux/Auth/actioncreator';
+import { SearchBox } from '../SearchBox/SearchBox';
 
-export const AdminPanel = ()=>{
+export const AdminPanel = () => {
 
     const dispatch = useDispatch()
     const { loggedUser, authStatus } = useSelector(store => store.auth)
 
-    return(
+    return (
         <div>
             <div className="admin-panel">
                 <div className='admin-panel__medium-logo'>
@@ -24,39 +25,39 @@ export const AdminPanel = ()=>{
                 </div>
                 <div className='admin-panel__icon-container'>
                     <IconButton>
-                        <HomeIcon sx={{ fontSize : 32, color : "rgb(117 117 117)" }}/>
+                        <HomeIcon sx={{ fontSize: 32, color: "rgb(117 117 117)" }} />
                     </IconButton>
                     <IconButton>
-                        <NotificationsNoneIcon sx={{ fontSize : 32, color : "rgb(117 117 117)" }}/>
+                        <NotificationsNoneIcon sx={{ fontSize: 32, color: "rgb(117 117 117)" }} />
                     </IconButton>
                     <IconButton>
-                        <BookmarkBorderIcon sx={{ fontSize : 32, color : "rgb(117 117 117)" }}/>
+                        <BookmarkBorderIcon sx={{ fontSize: 32, color: "rgb(117 117 117)" }} />
                     </IconButton>
                     <IconButton>
-                        <ListAltIcon sx={{ fontSize : 32, color : "rgb(117 117 117)" }}/>
+                        <ListAltIcon sx={{ fontSize: 32, color: "rgb(117 117 117)" }} />
                     </IconButton>
                     <IconButton>
-                        <BorderColorIcon sx={{ fontSize : 32, color : "rgb(117 117 117)" }}/>
+                        <BorderColorIcon sx={{ fontSize: 32, color: "rgb(117 117 117)" }} />
                     </IconButton>
                 </div>
                 <div className='admin-panel__user-profile-image'>
-                    { authStatus ? <div className='admin-panel__logout'>
-                        <Avatar src={loggedUser?.avatar} alt={loggedUser?.name}/>
+                    {authStatus ? <div className='admin-panel__logout'>
+                        <Avatar src={loggedUser?.avatar} alt={loggedUser?.name} />
                         <span
-                        onClick={()=>{
-                            localStorage.removeItem('user')
-                            dispatch(setAuthStatus(false)) 
-                            dispatch(setSignInAlert())
-                        }}
+                            onClick={() => {
+                                localStorage.removeItem('user')
+                                dispatch(setAuthStatus(false))
+                                dispatch(setSignInAlert())
+                            }}
                         >Logout</span>
                     </div>
-                    :
-                    <div className='admin-panel__logout'>
-                        <span onClick={()=>{
-                            dispatch(setSignInPopup(true))
-                        }}>Login</span>
-                    </div> 
-                }
+                        :
+                        <div className='admin-panel__logout'>
+                            <span onClick={() => {
+                                dispatch(setSignInPopup(true))
+                            }}>Login</span>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
