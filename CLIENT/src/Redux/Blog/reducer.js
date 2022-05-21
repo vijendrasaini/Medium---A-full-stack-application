@@ -1,4 +1,4 @@
-import { SETBLOGS, SETFULLBLOG, SETSEARCHKEYWORD, SETTAGS, PAGE} from "./action";
+import { SETBLOGS, SETFULLBLOG, SETSEARCHKEYWORD, SETTAGS, PAGE, TOTAL_DOCS} from "./action";
 
 
 const initState = {
@@ -7,7 +7,8 @@ const initState = {
     tags : [],
     searchKeyword : "",
     loading : false,
-    page : 1
+    page : 1,
+    totalDocs : 10
 };
 export const reducer = (state = initState, { type, payload} ) =>{
     switch (type) {
@@ -26,6 +27,9 @@ export const reducer = (state = initState, { type, payload} ) =>{
         case PAGE:
             return { ...state, page : payload}
 
+        case TOTAL_DOCS:
+            return { ...state, totalDocs : payload}
+        
         default:
             return state
     }
