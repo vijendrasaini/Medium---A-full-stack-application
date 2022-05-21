@@ -1,15 +1,16 @@
 .search-box {
-    position: fixed;
-    /* right: 100px; */
-    right:20px;
+    /* position: fixed;
+    right: 100px;
+    right:0px; */
     width :  388px;
+    /* width: 600px; */
     border: 1px solid rgb(220, 212, 212);
     border-radius : 99px;
     display : flex;
     align-items : center;
     box-sizing:border-box;
     height: 40px;
-    margin-top: 30px;
+    margin-top: 10px;
     background-color: white;
 }
 .search-box:focus-within{
