@@ -15,7 +15,7 @@ export const setTotalDocs = (payload) => ({ type : TOTAL_DOCS, payload})
 export const fetchBlogs = (tag, page)=>async function fetchBlogsSummeries(dispatch){
     const path = '/blogs'
     try {
-        dispatch(setSearchKeyword(tag))            
+        dispatch(setSearchKeyword(tag))        
         const response = await fetch(`${baseURL}${path}?page=${page}&q=${tag == "" ? "billion" : tag}`)
         dispatch(setLoading(true))
         const data = await response.json()
