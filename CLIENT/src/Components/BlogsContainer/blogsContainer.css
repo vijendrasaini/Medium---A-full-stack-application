@@ -23,3 +23,13 @@
 .blogs-container__no-results img{
     width: 600px;
 }
+
+.pagn-container{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 10px;
+}
+.pagn-container button{
+    padding: 5px 10px;
+    font-weight: bold;
+}
