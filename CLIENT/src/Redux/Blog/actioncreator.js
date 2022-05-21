@@ -9,19 +9,17 @@ export const setFullBlog = (payload) => ( { type : SETFULLBLOG, payload})
 export const setSearchTag = (payload) => ( { type : SETSEARCHTAG, payload})
 export const setSearchKeyword = (payload) => ( { type : SETSEARCHKEYWORD , payload})
 export const setLoading = (payload) => ( { type : LOADING, payload})
-export const setPage = (payload) => { type : PAGE, payload}
-export const setTotalDocs = (payload) => { type : TOTAL_DOCS, payload}
+export const setPage = (payload) => ({ type : PAGE, payload})
+export const setTotalDocs = (payload) => ({ type : TOTAL_DOCS, payload})
 
 export const fetchBlogs = (tag, page)=>async function fetchBlogsSummeries(dispatch){
     const path = '/blogs'
     try {
         dispatch(setSearchKeyword(tag))            
-        const response = await fetch(`${baseURL}${path}?page=${page || 0}&q=${tag == "" ? "billion" : tag}`)
+        const response = await fetch(`${baseURL}${path}?page=${page}&q=${tag == "" ? "billion" : tag}`)
         dispatch(setLoading(true))
         const data = await response.json()
-        console.log(data)
-        dispatch(setBlogs(data.blogs))
-        dispatch(setTotalDocs(data.total))
+        dispatch(setBlogs(data))
         dispatch(setLoading(false))
     } catch (error) {
         console.log({message : error.message})   
