@@ -14,7 +14,7 @@ import { baseURL } from '../../Resources/universalData'
 import { useEffect } from 'react'
 import { useRef } from 'react'
 import './routers.css'
-import { setAuthStatus, setLoggedUser } from '../../Redux/Auth/actioncreator'
+import { setAuthStatus, setLoggedUser, openSignInPopup,setSignInAlert } from '../../Redux/Auth/actioncreator'
 
 
 
@@ -26,7 +26,7 @@ export const AllRouters = () => {
     const Id = useRef(null)
     
     const { loading } = useSelector(store => store.blog)
-    const { authStatus, signInAlert} = useSelector( store => store.auth)
+    const { authStatus, signInAlert, openSignInPopUp} = useSelector( store => store.auth)
     const dispatch = useDispatch()
 
     const handleInputChange = (e) => {
