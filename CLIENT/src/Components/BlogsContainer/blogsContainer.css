@@ -6,16 +6,17 @@
 .blogs-container{
     display: flex;
     justify-content: center;
-    padding: 0px 150px;
-    width: 68%;
+    width: 1145px;
     border-right: 1px solid rgb(233, 224, 224);
+}
+.blogs-container > div:first-child{
+    margin-top:  50px;
 }
 .blogs-page__tags{
     padding-left: 40px;
-    margin-top: 60px;
 }
 .blogs-container__no-results{
-    width: 745px;
+    width: 750px;
     display: flex;
     justify-content: center;
     align-items: center;
