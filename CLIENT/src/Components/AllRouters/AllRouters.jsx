@@ -14,19 +14,19 @@ import { baseURL } from '../../Resources/universalData'
 import { useEffect } from 'react'
 import { useRef } from 'react'
 import './routers.css'
-import { setAuthStatus, setLoggedUser, openSignInPopup,setSignInAlert } from '../../Redux/Auth/actioncreator'
+import { setAuthStatus, setLoggedUser,setSignInPopup ,setSignInAlert } from '../../Redux/Auth/actioncreator'
 
 
 
 export const AllRouters = () => {
-
+    
     const [signUpOpen, setSignUpOpen] = useState(false)
-    const [signInOpen, setSignInOpen] = useState(false)
+    // const [signInOpen, setSignInOpen] = useState(false)
     const [user, setUser] = useState({ name: "", email: "", password: ""})
     const Id = useRef(null)
     
     const { loading } = useSelector(store => store.blog)
-    const { authStatus, signInAlert, openSignInPopUp} = useSelector( store => store.auth)
+    const { authStatus, signInPopUp, openSignInPopUp} = useSelector( store => store.auth)
     const dispatch = useDispatch()
 
     const handleInputChange = (e) => {
@@ -37,7 +37,7 @@ export const AllRouters = () => {
         setSignUpOpen(false)
     }
     const handleSignInOpen = () => {
-        setSignInOpen(false)
+        dispatch(setSignInPopup(false))
     }
 
     const signUp = async () => {
@@ -56,7 +56,7 @@ export const AllRouters = () => {
                 return
             else {
                 setSignUpOpen(false)
-                setSignInOpen(true)
+                dispatch(setSignInPopup(true))
             }
         } catch (error) {
             console.log({ error: error.message })
@@ -84,7 +84,7 @@ export const AllRouters = () => {
                     dispatch(setAuthStatus(true)) 
                     localStorage.setItem('user', JSON.stringify(result.user))
                     dispatch(setLoggedUser(result.user))
-                    setSignInOpen(false)
+                    dispatch(setSignInPopup(false))
                 }
             }
         } catch (error) {
@@ -94,11 +94,10 @@ export const AllRouters = () => {
     const checkLoggedUser = () => {
         if(authStatus)
             return 
-        console.log({authStatus})
         if (Id.current)
             return
         Id.current = setTimeout(() => {
-            setSignInOpen(true)
+            dispatch(setSignInPopup(true))
         }, 2000)
     }
     const sendForSignUp = () => {
@@ -134,7 +133,7 @@ export const AllRouters = () => {
                     </div>
                 } />
             </Routes>
-            <Dialog open={signInOpen} onClose={handleSignInOpen}>
+            <Dialog open={signInPopUp} onClose={handleSignInOpen}>
                 <div className='signin-pop-up login-pop-up'>
                     <Avatar sx={{ m: 3, bgcolor: 'primary.main' }} src={logo}>
                     </Avatar>
