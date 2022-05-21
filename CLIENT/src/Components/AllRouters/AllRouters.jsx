@@ -21,12 +21,11 @@ import { setAuthStatus, setLoggedUser,setSignInPopup ,setSignInAlert } from '../
 export const AllRouters = () => {
     
     const [signUpOpen, setSignUpOpen] = useState(false)
-    // const [signInOpen, setSignInOpen] = useState(false)
     const [user, setUser] = useState({ name: "", email: "", password: ""})
     const Id = useRef(null)
     
     const { loading } = useSelector(store => store.blog)
-    const { authStatus, signInPopUp, openSignInPopUp} = useSelector( store => store.auth)
+    const { authStatus, signInPopUp, signInAlert} = useSelector( store => store.auth)
     const dispatch = useDispatch()
 
     const handleInputChange = (e) => {
@@ -38,6 +37,7 @@ export const AllRouters = () => {
     }
     const handleSignInOpen = () => {
         dispatch(setSignInPopup(false))
+        dispatch(setSignInAlert())
     }
 
     const signUp = async () => {
@@ -96,9 +96,11 @@ export const AllRouters = () => {
             return 
         if (Id.current)
             return
-        Id.current = setTimeout(() => {
-            dispatch(setSignInPopup(true))
-        }, 2000)
+        if(signInAlert){
+            Id.current = setTimeout(() => {
+                dispatch(setSignInPopup(true))
+            }, 2000)
+        }
     }
     const sendForSignUp = () => {
         setSignInOpen(false)
@@ -198,7 +200,10 @@ export const AllRouters = () => {
                                 </span>
                             </Grid>
                             <div className='skip-for-now'>
-                                <span>I will do it later</span>
+                                <span onClick={()=>{ 
+                                    dispatch(setSignInAlert()) 
+                                    dispatch(setSignInPopup(false))
+                                    }}>I will do it later</span>
                             </div>
                         </Box>
                     </div>
